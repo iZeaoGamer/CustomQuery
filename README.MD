@@ -2,7 +2,7 @@ Custom Query, is one of the most customizable query plugins for MCPE that you'll
 Custom Query aims for servers to make themselves more better, and allow people to recognize the customisable server.
 We at Custom Query, are a benefical to the MCPE Community, and dedicate our time to make this system work.
 Here with Custom Query, you can do the following:
-Fake player slots, set a list of plugins that can is displayable for your players, server name - Change your server name right from config! How great is that?, customize min-max fake player count/slots, infinity slots, enable/disable each option! Right from config.yml, so you can enable/disable the things you do or don't want.
+Fake player slots, set a list of plugins that can be displayable for your players, server name - Change your server name right from config! How great is that?, customize min-max fake player count/slots, infinity slots, enable/disable each option! Right from config.yml, so you can enable/disable the things you do or don't want.
 
 
 
