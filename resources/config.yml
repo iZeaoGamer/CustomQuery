@@ -1,0 +1,22 @@
+## Welcome to CustomQuery plugin configurations, where you can configure
+## the way you handle Queries.
+
+list-plugins: true
+## List your plugins on the servers list websites.
+
+set-plugins: []
+## If list-plugins option is set to true, customize which plugins should be shown / displayed.
+
+infinity-slots: true
+## If this option is set to true, the max players slots will be 1 above the player count that is currently online. So it'd look like this: 0/1. If one person joined, it'll be 1/2, etc.
+
+server-name: "Most customizable Query plugin."
+## Set the server name for the Query to generate such data.
+
+fake-slots: true
+## Allows you to fake your player slots.
+
+min-slots: 10
+## From first player slot (which is minimum) and then the maximum of slots it can go up to to fake query it (Which is below.)
+
+max-slots: 1000
