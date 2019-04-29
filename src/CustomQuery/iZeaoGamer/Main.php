@@ -25,9 +25,11 @@ class Main extends PluginBase implements Listener{
     if($config->get("infinity-slots") === true){
         $event->setMaxPlayerCount($event->getPlayerCount() + 1);
 }
+if($config->get("default-servername") === false){
 $serverName = $config->get("server-name");
 $event->setServerName($serverName);
-}
+            }
+        }
         if($config->get("fake-slots") === true){
         $minPlayerCount = $config->get("min-slots");
 $maxPlayerCount = $config->get("max-slots");
