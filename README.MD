@@ -13,6 +13,8 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Set which plugins other players can see.
 - [x] Enable/disable options to suit your needs.
 - [x] set min-max player slots (fake query system)
+- [ ] Add commands to edit the query settings.
+- [ ] Add messages for when it becomes visible / settings onEnable() state. 
 
 
 
