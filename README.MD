@@ -6,7 +6,7 @@ Fake player slots, set a list of plugins that can be displayable for your player
 
 
 
-### PLANNED UPDATES
+### PLANNED / FINISHED UPDATES
 
 - [x] Infinity slots.
 - [x] Fake your player slots.
