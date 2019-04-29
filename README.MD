@@ -1,5 +1,4 @@
 [![](https://poggit.pmmp.io/shield.state/CustomQuery)](https://poggit.pmmp.io/p/CustomQuery)
-<a href="https://poggit.pmmp.io/p/CustomQuery"><img src="https://poggit.pmmp.io/shield.state/CustomQuery"></a>
 
 Custom Query, is one of the most customizable query plugins for MCPE that you'll ever find publicly and that is free for the MCPE Community.
 Custom Query aims for servers to make themselves more better, and allow people to recognize the customisable server.
