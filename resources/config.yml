@@ -22,6 +22,6 @@ fake-slots: true
 ## Allows you to fake your player slots.
 
 min-slots: 10
-## From first player slot (which is minimum) and then the maximum of slots it can go up to to fake query it (Which is below.)
+## From first player slot (which is minimum) and then the maximum of slots it can go up to via fake querying it.
 
 max-slots: 1000
