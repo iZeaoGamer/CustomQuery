@@ -1,13 +1,11 @@
 <?php
 namespace CustomQuery\iZeaoGamer;
-
 use pocketmine\utils\Config;
 use pocketmine\event\server\QueryRegenerateEvent;
 use pocketmine\event\Listener;
+use pocketmine\utils\TextFormat;
 use pocketmine\plugin\PluginBase;
-
 class Main extends PluginBase implements Listener{
-
     public function onEnable(): void{
         if(!is_file($this->getDataFolder() . "config.yml")){
             $this->saveDefaultConfig();
@@ -27,7 +25,7 @@ class Main extends PluginBase implements Listener{
 }
 if($config->get("default-servername") === false){
 $serverName = $config->get("server-name");
-$event->setServerName($serverName);
+$event->setServerName(TextFormat::colorize($serverName));
             }
         }
         if($config->get("fake-slots") === true){

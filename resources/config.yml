@@ -16,6 +16,7 @@ default-servername: false
 
 server-name: "Most customizable Query plugin."
 ## Set the server name for the Query to generate such data.
+## Use & color code symbol for coloring your server name.
 
 fake-slots: true
 ## Allows you to fake your player slots.
