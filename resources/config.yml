@@ -13,6 +13,7 @@ infinity-slots: true
 default-servername: false
 ## If set to true, then it'll use the defaulted server name (given by pocketmine's standards or another plugin.)
 ## If option set to false, then the server name system will use this plugin, and the option for it below.
+
 server-name: "Most customizable Query plugin."
 ## Set the server name for the Query to generate such data.
 
