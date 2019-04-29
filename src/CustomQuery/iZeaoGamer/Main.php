@@ -1,18 +1,22 @@
 <?php
+
 namespace CustomQuery\iZeaoGamer;
+
 use pocketmine\utils\Config;
 use pocketmine\event\server\QueryRegenerateEvent;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\plugin\PluginBase;
+
 class Main extends PluginBase implements Listener{
+    
     public function onEnable(): void{
         if(!is_file($this->getDataFolder() . "config.yml")){
             $this->saveDefaultConfig();
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if (!is_dir($this->getDataFolder())) { @mkdir($this->getDataFolder()); }
-    }
+        }
     }
     public function onQuery(QueryRegenerateEvent $event){
         if($config->get("list-plugins") === true){
@@ -32,6 +36,6 @@ $event->setServerName(TextFormat::colorize($serverName));
         $minPlayerCount = $config->get("min-slots");
 $maxPlayerCount = $config->get("max-slots");
 $event->setPlayerCount(mt_rand($minPlayerCount, $maxPlayerCount));
-            }
-         }
-        }
+       }
+   }
+}
