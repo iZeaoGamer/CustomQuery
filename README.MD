@@ -20,4 +20,4 @@ Fake player slots, set a list of plugins that can be displayable for your player
 
 
 ### NOTE
-## This plugin is currently in the ALPHA stages, meaning it's not been tested to work yet. If you find any errors or issues, please open a new issue with the error log.
+## This plugin is currently in the ALPHA stages, If you find any errors or issues, please open a new issue with the error log.
