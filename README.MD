@@ -16,7 +16,9 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Enable/disable options to suit your needs.
 - [x] set min-max player slots (fake query system)
 - [x] Added color coding support for server names.
-- [ ] Set variables for server names.
+- [x] Set variables for server names.
+- [x] Customizable server list MOTD (When posting your server) (Untested)
+- [x] Add a task file. (Untested)
 - [ ] Add commands to edit the query settings.
 
 

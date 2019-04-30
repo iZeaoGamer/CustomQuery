@@ -10,13 +10,42 @@ set-plugins: []
 infinity-slots: true
 ## If this option is set to true, the max players slots will be 1 above the player count that is currently online. So it'd look like this: 0/1. If one person joined, it'll be 1/2, etc.
 
+enable-serverlist-motd: true
+## Allows you to enable/disable server list MOTD (From server list websites.)
+## Currently untested, and may/may not overwrite the default-servername options.
+
+motd-serverlist-message: "Welcome! Join!"
+## The MOTD from server list websites. (when posting your server)
+
 default-servername: false
 ## If set to true, then it'll use the defaulted server name (given by pocketmine's standards or another plugin.)
 ## If option set to false, then the server name system will use this plugin, and the option for it below.
+## WARNING - Due to v1.0.1 ALPHA version, this functionality may not work.
+## If this functionality doesn't work, please report it at our github plugin page, and set default-servername to true.
 
-server-name: "Most customizable Query plugin."
-## Set the server name for the Query to generate such data.
+enable-player-motd: true
+## If set to true, then it'll use the new-player-motd and the old-player-motd messages (set below).
+## What this does, is it allows you to show those that haven't joined the server before's MOTD, and then the old player5's MOTD (Those that have joined before.)
+## If set to false, player motd messages will be disabled.
+## Keep in mind - This functionality may not work. Use at your own risk!
+
+ new-player-motd: "Most customizable Query plugin."
+## Set the server name for the Query to generate the server MOTD data.
 ## Use & color code symbol for coloring your server name.
+## Variables:
+  #{online} = Shows how many players are online.
+  #{maxplayers} - Shows the maximum of players (slots).
+  #{newbie} - Displays the new player name.
+## This option allows you to show a new player MOTD message when someone has never joined the server before, and the MOTD should show such data.
+
+old-player-motd: "Hello, {player}!"
+## Set the server name for the Query to generate the server MOTD data.
+## Use & color code symbol for coloring your server name.
+## Variables:
+  #{online} = Shows the amount of players currently online.
+  #{maxplayers} = Shows the maximum of players the server can go up to. (it has its limits.)
+  #{player} = Displays the old player name.
+  ##This option allows you to show the old player name.
 
 fake-slots: true
 ## Allows you to fake your player slots.
