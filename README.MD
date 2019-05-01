@@ -34,7 +34,7 @@ Fake player slots, set a list of plugins that can be displayable for your player
 
 
 ### HOW TO INSTALL
-1. Simply download this plugin either from https://poggit.pmmp.io/p/CustomQuery/ (More stabld.) or from one of the ddev builds (Bleeding edge builds), which you can get fom this link: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery
+1. Simply download this plugin either from https://poggit.pmmp.io/p/CustomQuery/ (More stable.) or from one of the ddev builds (Bleeding edge builds), which you can get fom this link: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery
 2. Once installed, drop the plugin into plugins folder.
 3. Start/restart your server from console or terminal.
 4. Done. If any errors display, please open a new issue containing the error log.
