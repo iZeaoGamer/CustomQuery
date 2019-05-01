@@ -25,7 +25,7 @@ default-servername: false
 
 enable-player-motd: true
 ## If set to true, then it'll use the new-player-motd and the old-player-motd messages (set below).
-## What this does, is it allows you to show those that haven't joined the server before's MOTD, and then the old player’s MOTD (Those that have joined before.)
+## What this does, is it allows you to show those that haven't joined the server before's MOTD, and then the old player's MOTD (Those that have joined before.)
 ## If set to false, player motd messages will be disabled.
 ## Keep in mind - This functionality may not work. Use at your own risk!
 
