@@ -19,7 +19,7 @@ class Main extends PluginBase implements Listener{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if (!is_dir($this->getDataFolder())) { @mkdir($this->getDataFolder()); }
         }
-    $config = new Config($this->plugin->getDataFolder() . "config.yml", Config::YAML, array());
+    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
     if($config->get("default-server-name" === false)){
         if(($player = count($this->getServer()->getOnlinePlayers() < 1))){
             $this->getScheduler()->scheduleRepeatingTask(new ServerNameTask($this, $player), 20);
