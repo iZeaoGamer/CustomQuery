@@ -19,7 +19,10 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Set variables for server names.
 - [x] Customizable server list MOTD (When posting your server) (Untested)
 - [x] Add a task file. (Untested)
-- [ ] Add commands to edit the query settings.
+- [x] Add commands to edit the query settings.
+- [x] Add /customquery reload to reload the configurations without the need of a server restart.
+- [ ] Make messages configurable.
+- [ ] Release out of the ALPHA stages.
 
 
 ### NOTE
