@@ -25,6 +25,8 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [ ] Add config versioning.
 - [ ] Allow spaces for each messages. At the moment, you can use: "" for spaces in the message/value section after the name of the option. We'll see if we can add such support soon.
 - [ ] Make messages configurable.
+- [ ] Add formsapi support - not confirmed.
+- [ ] Add an option whether to add support for formsapi or use command arguments instead.
 - [ ] Release out of the ALPHA stages.
 
 
