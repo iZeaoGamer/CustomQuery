@@ -21,6 +21,9 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Add a task file. (Untested)
 - [x] Add commands to edit the query settings.
 - [x] Add /customquery reload to reload the configurations without the need of a server restart.
+- [x] Add /customquery help for a list of commands and validable settings you can choose from.
+- [ ] Add config versioning.
+- [ ] Allow spaces for each messages. At the moment, you can use: "" for spaces in the message/value section after the name of the option. We'll see if we can add such support soon.
 - [ ] Make messages configurable.
 - [ ] Release out of the ALPHA stages.
 
