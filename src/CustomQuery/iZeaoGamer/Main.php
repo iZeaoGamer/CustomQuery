@@ -19,7 +19,6 @@ class Main extends PluginBase implements Listener{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if (!is_dir($this->getDataFolder())) { @mkdir($this->getDataFolder()); }
         }
-    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
     if($config->get("default-server-name" === false)){
         if(($player = count($this->getServer()->getOnlinePlayers() < 1))){
             $this->getScheduler()->scheduleRepeatingTask(new ServerNameTask($this, $player), 20);
@@ -28,8 +27,8 @@ class Main extends PluginBase implements Listener{
 }
     public function onQuery(QueryRegenerateEvent $event){
         if($config->get("list-plugins") === true){
-            $this->list = $config->get("set-plugins");
-            foreach($this->list as $plugins){
+            $this->plugins = $config->get("set-plugins");
+            foreach($this->plugins as $plugins){
             $event->setPlugins([$plugins]);
     }
     if($config->get("infinity-slots") === true){
