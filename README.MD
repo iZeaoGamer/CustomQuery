@@ -21,7 +21,7 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Add a task file. (Untested)
 - [x] Add commands to edit the query settings.
 - [x] Add /customquery reload to reload the configurations without the need of a server restart.
-- [x] Add /customquery help for a list of commands and validable settings you can choose from.
+- [x] Add /customquery help for a list of main commands you can use.
 - [ ] Add config versioning.
 - [ ] Allow spaces for each messages. At the moment, you can use: "" for spaces in the message/value section after the name of the option. We'll see if we can add such support soon.
 - [ ] Make messages configurable.
@@ -30,3 +30,37 @@ Fake player slots, set a list of plugins that can be displayable for your player
 
 ### NOTE
 ## This plugin is currently in the ALPHA stages, If you find any errors or issues, please open a new issue with the error log.
+
+
+
+### HOW TO INSTALL
+1. Simply download this plugin either from https://poggit.pmmp.io/p/CustomQuery/ (More stabld.) or from one of the ddev builds (Bleeding edge builds), which you can get fom this link: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery
+2. Once installed, drop the plugin into plugins folder.
+3. Start/restart your server from console or terminal.
+4. Done. If any errors display, please open a new issue containing the error log.
+If you want to know about how to setup the plugin (IN GAME), then please go to HOW TO SETUP section.
+
+### HOW TO SETUP
+1. If the plugin is successfully installed, and working on your server, then go to plugin_data.
+2. Then go to where it says CustomQuery folder, the config should be available to you.
+3. Go to the config.yml file.
+4. Now, here's where all of the config options should be available to you. Now, this tutorial is mainly discussing about setting up your settings in game.
+5. So once you're on your config.yml file, copy one of the options (that you would like to add / setup) to in game. We'll use fake-slots as an example.
+6. Then, use /customquery fake-slots true, which would set up the fake slots option to true. You can use the option as false as well if you prefer not to use such options.
+
+Want to setup min-max player slots of your fake querying? Then great! Here's how:
+1. Go to the config.yml file (as instructed above from before.)
+2. Copy the option: min-slots and use /customquery min-slots 10, which will set up 10 as the minimum slots as lowest player slots you can go to.
+3. Then copy the option: max-slots and use /customquery max-slots 1000, which will set up 1,000 as the maximum slots as highest player slots you can go up to.
+
+These are just examples of how to setup your config options.
+To know more about setting up as examples, please head over to Examples section.
+
+
+### EXAMPLES
+The usages to the settings system, is: /customquery <settings> <value>
+  <settings> is the setting specified and provided to you from config.yml, and value is the value of the option. It could be: true or false if it's enabling a option or feature.
+    If you're setting a message such as server list motd message, then that'd be a string, leading to a message for that option.
+    If you're setting a numeric option such as: min-slots - 10 or max-slots 1000, then that'd be a int, which is a number-type option.
+    If you're setting a array option (Arrays, meaning [] which you'd have to enter such as: set-plugins, then that'd be an array, which allows you to set multiple plugins as to what the server will display/show.
+    boolean is true/false or a return type. So if you're setting a option that allows you to enable/disable a option / feature, which would either be: true, or false, then that's a boolean. If you're still having issues with setting up, then please open an issue regarding so. I'll make it easier soon by displaying all command usages (including settings which are validable.
