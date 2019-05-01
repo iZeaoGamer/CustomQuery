@@ -34,7 +34,7 @@ Fake player slots, set a list of plugins that can be displayable for your player
 
 
 ### HOW TO INSTALL
-1. Simply download this plugin either from https://poggit.pmmp.io/p/CustomQuery/ (More stable.) or from one of the ddev builds (Bleeding edge builds), which you can get fom this link: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery
+1. Simply download this plugin either from https://poggit.pmmp.io/p/CustomQuery/ (More stable.) or from one of the dev builds (Bleeding edge builds), which you can get fom this link: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery
 2. Once installed, drop the plugin into plugins folder.
 3. Start/restart your server from console or terminal.
 4. Done. If any errors display, please open a new issue containing the error log.
@@ -54,13 +54,13 @@ Want to setup min-max player slots of your fake querying? Then great! Here's how
 3. Then copy the option: max-slots and use /customquery max-slots 1000, which will set up 1,000 as the maximum slots as highest player slots you can go up to.
 
 These are just examples of how to setup your config options.
-To know more about setting up as examples, please head over to Examples section.
+To know more about setting up as more examples, please head over to OPTIONS EXPLAINATION section.
 
 
-### EXAMPLES
+### OPTIONS EXPLAINATION
 The usages to the settings system, is: /customquery <settings> <value>
   <settings> is the setting specified and provided to you from config.yml, and value is the value of the option. It could be: true or false if it's enabling a option or feature.
     If you're setting a message such as server list motd message, then that'd be a string, leading to a message for that option.
     If you're setting a numeric option such as: min-slots - 10 or max-slots 1000, then that'd be a int, which is a number-type option.
     If you're setting a array option (Arrays, meaning [] which you'd have to enter such as: set-plugins, then that'd be an array, which allows you to set multiple plugins as to what the server will display/show.
-    boolean is true/false or a return type. So if you're setting a option that allows you to enable/disable a option / feature, which would either be: true, or false, then that's a boolean. If you're still having issues with setting up, then please open an issue regarding so. I'll make it easier soon by displaying all command usages (including settings which are validable.
+    boolean is true/false or a return type. So if you're setting a option that allows you to enable/disable a option / feature, which would either be: true, or false, then that's a boolean. If you're still having issues with setting up, then please open an issue regarding so. I'll make it easier soon by displaying all command usages (including settings which are validable from the /customquery help command.
