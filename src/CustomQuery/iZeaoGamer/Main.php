@@ -61,6 +61,8 @@ if($args[0] === "help"){
     $sender->sendMessage(TextFormat::colorize("&aHelp page:"));
     $sender->sendMessage(TextFormat::colorize("&b/customquery reload &7- Reload config."));
     $sender->sendMessage(TextFormat::colorize("&b/customquery <settings> <value> &7- Setting the config options."));//to-do see if we should add all command arguments to /customquery help.
+    return true;
+}
     if($args[0] === "reload"){
         $this->reloadConfig();
         $sender->sendMessage(TextFormat::colorize("&aConfig reloaded successfully."));
