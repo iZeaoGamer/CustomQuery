@@ -47,19 +47,19 @@ $event->setPlayerCount(mt_rand($minPlayerCount, $maxPlayerCount));
    }
 public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
 if($command->getName() === "customquery"){
-    if(!$sender->hasPermission("customquery.settings")){
+    if(!$sender->hasPermission("customquery.settings")){ //to-do configure permission nodes for using /customquery.
         $sender->sendMessage(TextFormat::colorize("&cYou don't have permission to use this command."));
         return false;
     }
     if(!isset($args[0])){
-        $sender->sendMessage(TextFormat::colorize("&aUsage incorrect. Please use: &b/customquery <setting> <value>"));
+        $sender->sendMessage(TextFormat::colorize("&aUsage incorrect. Please use: &b/$label <setting> <value>"));
         return true;
     }
 }
 if($args[0] === "help"){
     $sender->sendMessage(TextFormat::colorize("&aHelp page:"));
-    $sender->sendMessage(TextFormat::colorize("&b/customquery reload &7- Reload config."));
-    $sender->sendMessage(TextFormat::colorize("&b/customquery <settings> <value> &7- Setting the config options."));//to-do see if we should add all command arguments to /customquery help.
+    $sender->sendMessage(TextFormat::colorize("&b/$label reload &7- Reload config."));
+    $sender->sendMessage(TextFormat::colorize("&b/$label <settings> <value> &7- Setting the config options."));//to-do see if we should add all command arguments to /customquery help.
     return true;
 }
     if($args[0] === "reload"){
@@ -74,11 +74,11 @@ if($args[0] === "help"){
         }
     }
         if($args[1] === "true"){
-            $sender->sendMessage(TextFormat::colorize("&dYou've set list-plugins option to true."));
+            $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
             $config->set("list-plugins", true);
         } else {
             if($args[1] === "false"){
-                $sender->sendMessage(TextFormat::colorize("&dYou've set list-plugins option to false."));
+                $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                 $config->set("list-plugins", false);
                 return true;
         }
@@ -90,12 +90,12 @@ if($args[0] === "help"){
             }
         }
             if($args[1] === "true"){
-                $sender->sendMessage(TextFormat::colorize("&dYou've set infinity slots option to true."));
-                $config->set("infinity-slots", true);
+                $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+                $config->set("infinity-slots", $args[1]);
             } else {
                 if($args[1] === "false"){
-                $sender->sendMessage(TextFormat::colorize("&dYou've set infinity slots option to false."));
-                $config->set("infinity-slots", false);
+                $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+                $config->set("infinity-slots", $args[1]);
             }
             }
             if($args[0] === "enable-serverlist-motd"){
@@ -105,12 +105,12 @@ if($args[0] === "help"){
                 }
             }
                 if($args[1] === "true"){
-                    $sender->sendMessage(TextFormat::colorize("&dYou've set enable-serverlist-motd option to true."));
-                    $config->set("enable-serverlist-motd", true);
+                    $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+                    $config->set("enable-serverlist-motd", $args[1]);
                 } else {
                     if($args[1] === "false"){
-                    $sender->sendMessage(TextFormat::colorize("&dYou've set enable-serverlist-motd option to false."));
-                    $config->set("enable-serverlist-motd", false);
+                    $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+                    $config->set("enable-serverlist-motd", $args[1]);
                 }
                 }
                 if($args[0] === "fake-slots"){
@@ -120,12 +120,12 @@ if($args[0] === "help"){
                     }
                 }
                     if($args[1] === "true"){
-                        $sender->sendMessage(TextFormat::colorize("&dYou've set fake-slots option to true."));
-                        $config->set("fake-slots", true);
+                        $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+                        $config->set("fake-slots", $args[1]);
                     } else {
                         if($args[1] === "false"){
-                        $sender->sendMessage(TextFormat::colorize("&dYou've set fake-slots option to false."));
-                        $config->set("fake-slots", false);
+                        $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+                        $config->set("fake-slots", $args[1]);
                     }
                     }
                     if($args[0] === "default-server-name"){
@@ -135,17 +135,17 @@ if($args[0] === "help"){
                         }
                     }
                         if($args[1] === "true"){
-                            $sender->sendMessage(TextFormat::colorize("&dYou've set default-server-name option to true."));
-                            $config->set("default-server-name", true);
+                            $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+                            $config->set("default-server-name", $args[1]);
                         } else {
                             if($args[1] === "false"){
-                            $sender->sendMessage(TextFormat::colorize("&dYou've set default-server-name option to false."));
-                            $config->set("default-server-name", false);
+                            $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+                            $config->set("default-server-name", $args[1]);
                         }
                         }
                         if($args[0] === "set-plugins"){
                             if(!isset($args[1])){
-                                $sender->sendMessage(TextFormat::colorize("&cOption cannot be empty. Use: /customquery set-plugins <plugins>"));
+                                $sender->sendMessage(TextFormat::colorize("&cOption cannot be empty. Use: /$label $args[0] <plugins>"));
                                 return true;
                             }
                         }
@@ -153,22 +153,22 @@ if($args[0] === "help"){
                                     $sender->sendMessage(TextFormat::colorize("&cPlease use arrays []."));
                                 } else {
                                     $config->set("set-plugins", $args[1]);
-                                        $sender->sendMessage(TextFormat::colorize("&dYou've set 'set-plugins' to &5" . $args[1] . "&d."));
+                                        $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' to &5" . $args[1] . "&d."));
                                         return true;
                                     }
                         if($args[0] === "motd-serverlist-message"){
                             $config->set("motd-serverlist-message", $args[1]);
-                            $sender->sendMessage(TextFormat::colorize("&dYou've set motd-serverlist-message to&5 " . $args[1] . "&d."));
+                            $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] to&5 " . $args[1] . "&d."));
                             return true;
                         }
                         if($args[0] === "new-player-motd"){
                             $config->set("new-player-motd", $args[1]);
-                            $sender->sendMessage(TextFormat::colorize("&dYou've set 'new-player-motd' message to " . $args[1]));
+                            $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' message to " . $args[1]));
                             return true;
                         }
                         if($args[0] === "old-player-motd"){
                             $config->set("old-player-motd", $args[1]);
-                            $sender->sendMessage(TextFormat::colorize("&dYou've set 'old-player-motd' message to " . $args[1]));
+                            $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' message to " . $args[1]));
                             return true;
                         }
                         if($args[0] === "min-slots"){
@@ -176,7 +176,7 @@ if($args[0] === "help"){
                                 $sender->sendMessage(TextFormat::colorize("&cInvalid option - Option must be a numeric number, $args[1] given."));
                             } else {
                                 $config->set("min-slots", $args[1]);
-                                $sender->sendMessage(TextFormat::colorize("&dYou've set 'min-slots' option to &5" . $args[1]));
+                                $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' option to &5" . $args[1]));
                                 return true;
                             }
                         }
@@ -185,7 +185,7 @@ if($args[0] === "help"){
                                     $sender->sendMessage(TextFormat::colorize("&cInvalid option - Option must be a numeric number, $args[1] given."));
                                 } else {
                                     $config->set("max-slots", $args[1]);
-                                    $sender->sendMessage(TextFormat::colorize("&dYou've set 'max-slots' option to &5" . $args[1]));
+                                    $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' option to &5" . $args[1]));
                                     return true;
                                 }
                             }
