@@ -22,6 +22,11 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Add commands to edit the query settings.
 - [x] Add /customquery reload to reload the configurations without the need of a server restart.
 - [x] Add /customquery help for a list of main commands you can use.
+- [x] Add an option to enable/disable query commands use in game to set your settings.
+- [x] Configure permission nodes from config.yml.
+- [x] Completely revamp the ideas of commands, and putting it onto a seperate file (CustomQueryCommand class).
+- [x] Register the command without the need of using plugin.yml to do it for you.
+- [x] Register the permission without the need of using plugin.yml to do it for you - We'll do more relating to this soon to support it even better.
 - [ ] Add config versioning.
 - [ ] Allow spaces for each messages. At the moment, you can use: "" for spaces in the message/value section after the name of the option. We'll see if we can add such support soon.
 - [ ] Make messages configurable.

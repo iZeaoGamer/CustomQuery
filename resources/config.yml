@@ -1,6 +1,16 @@
 ## Welcome to CustomQuery plugin configurations, where you can configure
 ## the way you handle Queries.
 
+### Command settings:
+enable-commands: true
+### Enable/disable query commands in game.
+### If enabled, you can set your configurations using commands.
+### If set to false, then you'll need to use the config.yml file to set your options.
+
+permission: "customquery.settings"
+### A permission node option, where you can customize your permissions to whatever you want.
+
+### Plugin / config options:
 list-plugins: true
 ## List your plugins on the servers list websites.
 
