@@ -1,15 +1,15 @@
 <?php
 namespace CustomQuery\iZeaoGamer;
-use pocketmine\utils\Config;
+
 use pocketmine\event\server\QueryRegenerateEvent;
 use pocketmine\event\Listener;
-use pocketmine\command\CommandSender;
-use pocketmine\command\Command;
+
+use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
+
 use pocketmine\plugin\PluginBase;
 
 use CustomQuery\iZeaoGamer\tasks\ServerNameTask;
-
 use CustomQuery\iZeaoGamer\commands\CustomQueryCommand;
 
 
@@ -27,9 +27,9 @@ class Main extends PluginBase implements Listener{
     if($config->get("default-server-name" === false)){
         if(($player = count($this->getServer()->getOnlinePlayers() < 1))){
             $this->getScheduler()->scheduleRepeatingTask(new ServerNameTask($this, $player), 20);
-        }
-    }
-        }
+       }
+      }
+     }
     }
     public function onQuery(QueryRegenerateEvent $event){
         if($config->get("list-plugins") === true){
