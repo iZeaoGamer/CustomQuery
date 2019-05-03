@@ -27,6 +27,7 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Completely revamp the ideas of commands, and putting it onto a seperate file (CustomQueryCommand class).
 - [x] Register the command without the need of using plugin.yml to do it for you.
 - [x] Register the permission without the need of using plugin.yml to do it for you - We'll do more relating to this soon to support it even better.
+- [ ] Notify you on any releases from poggit (this plugin). 
 - [ ] Add config versioning.
 - [ ] Allow spaces for each messages. At the moment, you can use: "" for spaces in the message/value section after the name of the option. We'll see if we can add such support soon.
 - [ ] Make messages configurable.
