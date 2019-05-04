@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener{
      }
     }
     /**
-	 * Checks if the configs are up-to-date.
+	 * Checks if the config is up-to-date.
 	 */
 	private function checkConfigs(): void{
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
