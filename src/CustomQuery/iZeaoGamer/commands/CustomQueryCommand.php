@@ -39,7 +39,7 @@ if($args[0] === "help"){
     }//To-Do make messages editable.
     if($args[0] === "list-plugins"){
         if(!isset($args[1])){
-            $sender->sendMessage(TextFormat::colorize("&cOption must return a value. true/false."));
+            $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
             return true;
         }
     }
@@ -55,7 +55,7 @@ if($args[0] === "help"){
         }
         if($args[0] === "infinity-slots"){
             if(!isset($args[1])){
-                $sender->sendMessage(TextFormat::colorize("&cOption must return a value. true/false."));
+                $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
                 return true;
             }
         }
@@ -70,7 +70,7 @@ if($args[0] === "help"){
             }
             if($args[0] === "enable-serverlist-motd"){
                 if(!isset($args[1])){
-                    $sender->sendMessage(TextFormat::colorize("&cOption must return a value. true/false."));
+                    $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
                     return true;
                 }
             }
@@ -85,7 +85,7 @@ if($args[0] === "help"){
                 }
                 if($args[0] === "fake-slots"){
                     if(!isset($args[1])){
-                        $sender->sendMessage(TextFormat::colorize("&cOption must return a value. true/false."));
+                        $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
                         return true;
                     }
                 }
@@ -100,7 +100,7 @@ if($args[0] === "help"){
                     }
                     if($args[0] === "default-server-name"){
                         if(!isset($args[1])){
-                            $sender->sendMessage(TextFormat::colorize("&cOption must return a value. true/false."));
+                            $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
                             return true;
                         }
                     }
