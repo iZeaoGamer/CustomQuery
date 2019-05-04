@@ -1,5 +1,8 @@
 ## Welcome to CustomQuery plugin configurations, where you can configure
 ## the way you handle Queries.
+### Plugin Settings:
+config-version: 0.1
+## DO NOT CHANGE THE OPTION ABOVE. DOING SO WILL POSSIBLY BREAK THE PLUGIN. This is for internal use only.
 
 ### Command settings:
 enable-commands: true

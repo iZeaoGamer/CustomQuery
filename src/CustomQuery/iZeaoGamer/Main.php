@@ -4,6 +4,9 @@ namespace CustomQuery\iZeaoGamer;
 use pocketmine\event\server\QueryRegenerateEvent;
 use pocketmine\event\Listener;
 
+use JackMD\ConfigUpdater\ConfigUpdater;
+use JackMD\UpdateNotifier\UpdateNotifier;
+
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 
@@ -14,10 +17,16 @@ use CustomQuery\iZeaoGamer\commands\CustomQueryCommand;
 
 
 class Main extends PluginBase implements Listener{
+    /** @var int */
+	private const CONFIG_VERSION = 0.1;
 
+    public function onLoad(): void{
+    $this->checkConfigs();
+    }
     public function onEnable(): void{
         if(!is_file($this->getDataFolder() . "config.yml")){
             $this->saveDefaultConfig();
+            UpdateNotifier::checkUpdate($this, $this->getDescription()->getName(), $this->getDescription()->getVersion());
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if (!is_dir($this->getDataFolder())) { @mkdir($this->getDataFolder()); }
@@ -31,6 +40,13 @@ class Main extends PluginBase implements Listener{
       }
      }
     }
+    /**
+	 * Checks if the configs are up-to-date.
+	 */
+	private function checkConfigs(): void{
+        $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
+		ConfigUpdater::checkUpdate($this, $config, "config-version", self::CONFIG_VERSION);
+	}
     public function onQuery(QueryRegenerateEvent $event){
         if($config->get("list-plugins") === true){
             $this->plugins = $config->get("set-plugins");
