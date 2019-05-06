@@ -21,7 +21,7 @@ class Main extends PluginBase implements Listener{
 	private const CONFIG_VERSION = 0.1;
 
     public function onLoad(): void{
-    $this->checkConfigs();
+    $this->checkConfig();
     }
     public function onEnable(): void{
         if(!is_file($this->getDataFolder() . "config.yml")){
@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener{
     /**
 	 * Checks if the config is up-to-date.
 	 */
-	private function checkConfigs(): void{
+	private function checkConfig(): void{
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
 		ConfigUpdater::checkUpdate($this, $config, "config-version", self::CONFIG_VERSION);
 	}
