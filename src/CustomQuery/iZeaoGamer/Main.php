@@ -19,13 +19,11 @@ use CustomQuery\iZeaoGamer\commands\CustomQueryCommand;
 class Main extends PluginBase implements Listener{
     /** @var int */
 	private const CONFIG_VERSION = 0.1;
-
-    public function onLoad(): void{
-    $this->checkConfig();
-    }
+	
     public function onEnable(): void{
         if(!is_file($this->getDataFolder() . "config.yml")){
             $this->saveDefaultConfig();
+		 $this->checkConfig();
             UpdateNotifier::checkUpdate($this, $this->getDescription()->getName(), $this->getDescription()->getVersion());
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
