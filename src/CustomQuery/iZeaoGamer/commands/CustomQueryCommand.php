@@ -14,7 +14,7 @@ class CustomQueryCommand extends Command {
         parent::__construct("query", "Set up your query settings.", "/query settings", ["cq"]);
         $this->plugin = $plugin;
     }
-public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
+public function execute(CommandSender $sender, string $label, array $args): bool{
     $config = new Config($this->plugin->getDataFolder() . "config.yml", Config::YAML, array());
 if($command->getName() === "customquery"){
     if(!$sender->hasPermission($config->get("permission"))){
