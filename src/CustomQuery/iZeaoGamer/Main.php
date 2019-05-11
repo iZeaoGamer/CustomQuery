@@ -29,6 +29,7 @@ class Main extends PluginBase implements Listener{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if (!is_dir($this->getDataFolder())) { @mkdir($this->getDataFolder()); }
         }
+	    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         if($config->get("enable-commands") === true){
         $this->getServer()->getCommandMap()->register("customquery", new CustomQueryCommand($this));
     if($config->get("default-server-name" === false)){
@@ -46,18 +47,22 @@ class Main extends PluginBase implements Listener{
 		ConfigUpdater::checkUpdate($this, $config, "config-version", self::CONFIG_VERSION);
 	}
     public function onQuery(QueryRegenerateEvent $event){
+	    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         if($config->get("list-plugins") === true){
             $this->plugins = $config->get("set-plugins");
             foreach($this->plugins as $plugins){
             $event->setPlugins([$plugins]);
     }
+		$config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
     if($config->get("infinity-slots") === true){
         $event->setMaxPlayerCount($event->getPlayerCount() + 1);
 }
+		$config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
 if($config->get("enable-serverlist-motd") === true){
     $serverList = $config->get("motd-serverlist-message");
     $event->setServerName(TextFormat::colorize($serverList)); //To-Do implement some variables for this option.
         }
+		$config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         if($config->get("fake-slots") === true){
         $minPlayerCount = $config->get("min-slots");
 $maxPlayerCount = $config->get("max-slots");
