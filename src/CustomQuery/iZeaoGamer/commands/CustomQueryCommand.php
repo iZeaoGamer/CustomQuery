@@ -117,7 +117,7 @@ if($args[0] === "help"){
                                 return true;
                             }
                         }
-                                if(!in_array($sender->getName(), $config->get("set-plugins"))){
+                                if(!is_array($config->get("set-plugins"))){
                                     $sender->sendMessage(TextFormat::colorize("&cPlease use arrays []."));
                                 } else {
                                     $config->set("set-plugins", $args[1]);
