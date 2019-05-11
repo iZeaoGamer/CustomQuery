@@ -24,6 +24,10 @@ public function execute(CommandSender $sender, string $label, array $args): bool
         $sender->sendMessage(TextFormat::colorize("&aUsage incorrect. Please use: &b/$label <setting> <value>"));
         return true;
     }
+if($args[0] === null){
+$sender->sendMessage(TextFormat::colorize("&cInvalid setting &4" . $args[0] . "&c Type: /$label help for a list of helpful commands."));
+return true;
+}
 if($args[0] === "help"){
     $sender->sendMessage(TextFormat::colorize("&aHelp page:"));
     $sender->sendMessage(TextFormat::colorize("&b/$label reload &7- Reload config."));
@@ -49,8 +53,13 @@ if($args[0] === "help"){
                 $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                 $config->set("list-plugins", false);
                 return true;
+        } else {
+if($args[1] != true and $args[1] != false){
+$sender->sendMessage(TextFormat::colorize("&cInvalid value."));
+return true;
         }
-        }
+}
+}
         if($args[0] === "infinity-slots"){
             if(!isset($args[1])){
                 $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
@@ -64,8 +73,13 @@ if($args[0] === "help"){
                 if($args[1] === "false"){
                 $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                 $config->set("infinity-slots", $args[1]);
+            } else {
+if($args[1] != true and $args[1] != false){
+$sender->sendMessage(TextFormat::colorize("&cInvalid value."));
+return true;
+        }
             }
-            }
+}
             if($args[0] === "enable-serverlist-motd"){
                 if(!isset($args[1])){
                     $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
@@ -79,8 +93,13 @@ if($args[0] === "help"){
                     if($args[1] === "false"){
                     $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                     $config->set("enable-serverlist-motd", $args[1]);
+                       } else {
+if($args[1] != true and $args[1] != false){
+$sender->sendMessage(TextFormat::colorize("&cInvalid value."));
+return true;
+}
                 }
-                }
+}
                 if($args[0] === "fake-slots"){
                     if(!isset($args[1])){
                         $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
@@ -94,8 +113,13 @@ if($args[0] === "help"){
                         if($args[1] === "false"){
                         $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                         $config->set("fake-slots", $args[1]);
+                           } else {
+if($args[1] != true and $args[1] != false){
+$sender->sendMessage(TextFormat::colorize("&cInvalid value."));
+return true;
+}
                     }
-                    }
+}
                     if($args[0] === "default-server-name"){
                         if(!isset($args[1])){
                             $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
@@ -109,8 +133,14 @@ if($args[0] === "help"){
                             if($args[1] === "false"){
                             $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                             $config->set("default-server-name", $args[1]);
-                        }
-                        }
+                               } else {
+if($args[1] != true and $args[1] != false){
+$sender->sendMessage(TextFormat::colorize("&cInvalid value."));
+return true;
+}
+}
+}
+                        
                         if($args[0] === "set-plugins"){
                             if(!isset($args[1])){
                                 $sender->sendMessage(TextFormat::colorize("&cOption cannot be empty. Use: /$label $args[0] <plugins>"));
@@ -160,4 +190,3 @@ if($args[0] === "help"){
                             return true;
                         }
                     }
-
