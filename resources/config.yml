@@ -42,7 +42,7 @@ enable-player-motd: true
 ## If set to false, player motd messages will be disabled.
 ## Keep in mind - This functionality may not work. Use at your own risk!
 
- new-player-motd: "Most customizable Query plugin."
+new-player-motd: "Most customizable Query plugin."
 ## Set the server name for the Query to generate the server MOTD data.
 ## Use & color code symbol for coloring your server name.
 ## Variables:
