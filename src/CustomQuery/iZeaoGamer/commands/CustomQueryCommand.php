@@ -16,7 +16,6 @@ class CustomQueryCommand extends Command {
     }
 public function execute(CommandSender $sender, string $label, array $args): bool{
     $config = new Config($this->plugin->getDataFolder() . "config.yml", Config::YAML, array());
-if($command->getName() === "customquery"){
     if(!$sender->hasPermission($config->get("permission"))){
         $sender->sendMessage(TextFormat::colorize("&cYou don't have permission to use this command."));
         return false;
@@ -25,7 +24,6 @@ if($command->getName() === "customquery"){
         $sender->sendMessage(TextFormat::colorize("&aUsage incorrect. Please use: &b/$label <setting> <value>"));
         return true;
     }
-}
 if($args[0] === "help"){
     $sender->sendMessage(TextFormat::colorize("&aHelp page:"));
     $sender->sendMessage(TextFormat::colorize("&b/$label reload &7- Reload config."));
