@@ -2,4 +2,5 @@ name: CustomQuery
 version: 1.0.3-ALPHA
 api: 3.0.0
 main: CustomQuery\iZeaoGamer\Main
+depend: [ConfigUpdater]
 description: "A customizable query plugin, where you can configure anything that relates to Querying your server."
