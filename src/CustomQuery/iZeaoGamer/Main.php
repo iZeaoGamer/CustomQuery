@@ -18,7 +18,7 @@ use CustomQuery\iZeaoGamer\commands\CustomQueryCommand;
 
 class Main extends PluginBase implements Listener{
     /** @var int */
-	private const CONFIG_VERSION = 0.1;
+	private const CONFIG_VERSION = 0.2;
 	
     public function onEnable(): void{
         if(!is_file($this->getDataFolder() . "config.yml")){
