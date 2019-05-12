@@ -1,7 +1,7 @@
 ## Welcome to CustomQuery plugin configurations, where you can configure
 ## the way you handle Queries.
 ### Plugin Settings:
-config-version: 0.1
+config-version: 0.2
 ## DO NOT CHANGE THE OPTION ABOVE. DOING SO WILL POSSIBLY BREAK THE PLUGIN. This is for internal use only.
 
 ### Command settings:
@@ -33,7 +33,7 @@ motd-serverlist-message: "Welcome! Join!"
 default-servername: false
 ## If set to true, then it'll use the defaulted server name (given by pocketmine's standards or another plugin.)
 ## If option set to false, then the server name system will use this plugin, and the option for it below.
-## WARNING - Due to v1.0.1 ALPHA version, this functionality may not work.
+## WARNING - Due to v1.0.1+ ALPHA version, this functionality may not work.
 ## If this functionality doesn't work, please report it at our github plugin page, and set default-servername to true.
 
 enable-player-motd: true
