@@ -13,7 +13,7 @@ use RuntimeException;
 
 class Utils { //Register class.
 
-    public function construct__(Main $plugin){ //A construction function, registering the main class to this class.
+    private function construct__(Main $plugin){ //A construction function, registering the main class to this class.
         $this->plugin = $plugin; //Register variable
     }
      /** @var int */
