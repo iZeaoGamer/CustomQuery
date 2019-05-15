@@ -29,7 +29,10 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Register the permission without the need of using plugin.yml to do it for you - We'll do more relating to this soon to support it even better.
 - [x] Notify you on any releases with this plugin from poggit to console. 
 - [x] Add config versioning.
-- [x] Add dependency for ConfigUpdater by JackMD - In plugin.yml.
+- [x] Fix dependency issue.
+- [x] Add virions section in plugin.yml, allowing the server to know what virions are in this plugin.
+- [x] Add more requirements for virions in poggit.yml
+- [x] Move all utils related to CustomQuery\iZeaoGamer\Utils.php. This is so we can keep the updaters seperated with the main class file. Things such as: Virions check, check for config updaters, and Update notifier will be in the Utils class.
 - [x] Release out of the ALPHA stages.
 - [ ] Allow spaces for each messages. At the moment, you can use: "" for spaces in the message/value section after the name of the option. We'll see if we can add such support soon.
 - [ ] Make messages configurable.
