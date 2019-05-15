@@ -10,9 +10,9 @@ use pocketmine\utils\Config;
 use CustomQuery\iZeaoGamer\Main;
 
 class CustomQueryCommand extends Command {
-    public function __construct(Main $plugin) {
-        parent::__construct("query", "Set up your query settings.", "/query settings", ["cq"]);
-        $this->plugin = $plugin;
+    public function __construct(Main $plugin) { //The construct to lead to the main class.
+        parent::__construct("query", "Set up your query settings.", "/query settings", ["cq"]); //Command, description, usage, and aliases, each extendations can be different to others. This is from extending commands file for Pocketmine. 
+        $this->plugin = $plugin; //Registering the variable so it can be used in functions. (Within this class file)
     }
 public function execute(CommandSender $sender, string $label, array $args): bool{
     $config = new Config($this->plugin->getDataFolder() . "config.yml", Config::YAML, array());

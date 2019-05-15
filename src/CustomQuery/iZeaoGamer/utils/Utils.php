@@ -11,13 +11,13 @@ use CustomQuery\iZeaoGamer\Main;
 
 use RuntimeException;
 
-class Utils {
+class Utils { //Register class.
 
-    public function construct__(Main $plugin){
-        $this->plugin = $plugin;
+    public function construct__(Main $plugin){ //A construction function, registering the main class to this class.
+        $this->plugin = $plugin; //Register variable
     }
      /** @var int */
-     private const CONFIG_VERSION = 0.2;
+     private const CONFIG_VERSION = 0.2; //Register config version file - Will get updated everytime a new config version is available.
 
     /**
 	 * Checks if the required virions/libraries are present before enabling the plugin.

@@ -16,10 +16,16 @@ use CustomQuery\iZeaoGamer\utils\Utils;
 
 class Main extends PluginBase implements Listener{
    
-    
+   /*
+    * This function becomes before onEnable() - So during the Loading plugin phase.
+    */
     public function onLoad(): void{
         Utils::UpdateNotifier();
     }
+    /*
+     * This function is when plugins are enabling.
+     * @return void
+     */
     public function onEnable(): void{
         if(!is_file($this->getDataFolder() . "config.yml")){
             $this->saveDefaultConfig();
@@ -38,6 +44,9 @@ class Main extends PluginBase implements Listener{
       }
      }
     }
+    /*
+    * An event function, allowing you to edit parts of the Query system for your servers.
+    */
     public function onQuery(QueryRegenerateEvent $event){
 	    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         if($config->get("list-plugins") === true){
