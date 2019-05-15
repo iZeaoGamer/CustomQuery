@@ -1,5 +1,5 @@
 <?php 
-namespace CustomQuery\utils;
+namespace CustomQuery\iZeaoGamer\utils;
 use JackMD\ConfigUpdater\ConfigUpdater;
 use JackMD\UpdateNotifier\UpdateNotifier;
 use pocketmine\utils\Config;
