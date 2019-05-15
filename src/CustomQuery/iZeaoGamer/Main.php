@@ -15,9 +15,7 @@ use CustomQuery\iZeaoGamer\utils\Utils;
 
 
 class Main extends PluginBase implements Listener{
-    
-    /** @var int */
-    private const CONFIG_VERSION = 0.2;
+   
     
     public function onLoad(): void{
         Utils::UpdateNotifier();
