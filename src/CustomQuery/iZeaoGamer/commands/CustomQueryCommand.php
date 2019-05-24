@@ -162,16 +162,16 @@ return true;
 }
 }
                         
-                        if($args[0] === "set-plugins"){
+                        if($args[0] === "set-fake-plugins"){
                             if(!isset($args[1])){
                                 $sender->sendMessage(TextFormat::colorize("&cOption cannot be empty. Use: /$label $args[0] <plugins>"));
                                 return true;
                             }
                         }
-                                if(!is_array($config->get("set-plugins"))){
+                                if(!is_array($config->get("set-fake-plugins"))){
                                     $sender->sendMessage(TextFormat::colorize("&cPlease use arrays []."));
                                 } else {
-                                    $config->set("set-plugins", $args[1]);
+                                    $config->set("set-fake-plugins", $args[1]);
                                         $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' to &5" . $args[1] . "&d."));
                                         return true;
                                     }

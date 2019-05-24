@@ -23,10 +23,10 @@ show-plugins: false
 
 
 fake-plugins: true
-## List your plugins on the servers list websites.
+## If this option is set to true, you can customize what plugins are shown on the server list websites.
 
-set-plugins: []
-## If list-plugins option is set to true, customize which plugins should be shown / displayed.
+set-fake-plugins: []
+## If fake-plugins option is set to true, customize which plugins should be shown / displayed.
 
 infinity-slots: true
 ## If this option is set to true, the max players slots will be 1 above the player count that is currently online. So it'd look like this: 0/1. If one person joined, it'll be 1/2, etc.
