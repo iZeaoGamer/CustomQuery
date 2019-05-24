@@ -21,7 +21,7 @@ public function execute(CommandSender $sender, string $label, array $args): bool
         if(!($sender instanceof Player)){
             $sender->sendMessage(TextFormat::colorize("&cPlease use this command in game."));
         } elseif($config->get("allow-console") === true && $sender instanceof Player or $config->get("allow-console") === false && $sender instanceof Player){
-            if($sender->hasPermission($config->get("permission"))){
+            if(!$sender->hasPermission($config->get("permission"))){
         $sender->sendMessage(TextFormat::colorize("&cYou don't have permission to use this command."));
         return false;
      }
