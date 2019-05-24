@@ -8,6 +8,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 
 use CustomQuery\iZeaoGamer\Main;
+use pocketmine\Player;
 
 class CustomQueryCommand extends Command {
     public function __construct(Main $plugin) { //The construct to lead to the main class.
