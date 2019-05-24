@@ -13,13 +13,18 @@ enable-commands: true
 permission: "customquery.settings"
 ### A permission node option, where you can customize your permissions to whatever you want.
 
+allow-console: true
+## This option allows you to toggle on/off allow console commands for this plugin.
+## If set to true, console detection will be turned off.
+## If set to false, console detection will be turned on.
+
+### Plugin / config options:
 show-plugins: false
 ### This option allows you to toggle on/off showing plugins (By defaulted, and in which are real).
 ## If this option is set to false, it will show up fake plugins (If fake-plugins option is set to true.)
 ## If this option is set to true, then it'll show real plugins, and may possibly overwrite fake-plugins, or overwrite one and another.
 ## It's best to keep one of the options "show-plugins" or "fake-plugins" to either true or false.
 ## Make sure they're not the same option just in case it does overwrite.
-### Plugin / config options:
 
 
 fake-plugins: true

@@ -16,14 +16,20 @@ class CustomQueryCommand extends Command {
     }
 public function execute(CommandSender $sender, string $label, array $args): bool{
     $config = new Config($this->plugin->getDataFolder() . "config.yml", Config::YAML, array());
-    if(!$sender->hasPermission($config->get("permission"))){
+    if($config->get("allow-console") === false){
+        if(!($sender instanceof Player)){
+            $sender->sendMessage(TextFormat::colorize("&cPlease use this command in game."));
+        } elseif($config->get("allow-console") === true && $sender instanceof Player or $config->get("allow-console") === false && $sender instanceof Player){
+            if($sender->hasPermission($config->get("permission"))){
         $sender->sendMessage(TextFormat::colorize("&cYou don't have permission to use this command."));
         return false;
+     }
     }
     if(!isset($args[0])){
         $sender->sendMessage(TextFormat::colorize("&aUsage incorrect. Please use: &b/$label <setting> <value>"));
         return true;
     }
+}
 if($args[0] === null){
 $sender->sendMessage(TextFormat::colorize("&cInvalid setting &4" . $args[0] . "&c Type: /$label help for a list of helpful commands."));
 return true;
