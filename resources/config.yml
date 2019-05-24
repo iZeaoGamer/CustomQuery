@@ -14,7 +14,7 @@ permission: "customquery.settings"
 ### A permission node option, where you can customize your permissions to whatever you want.
 
 allow-console: true
-## This option allows you to toggle on/off allow console commands for this plugin.
+## This option allows you to toggle on/off console detection.
 ## If set to true, console detection will be turned off.
 ## If set to false, console detection will be turned on.
 
