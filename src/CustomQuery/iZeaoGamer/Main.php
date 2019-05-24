@@ -49,11 +49,15 @@ class Main extends PluginBase implements Listener{
     */
     public function onQuery(QueryRegenerateEvent $event){
 	    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
-        if($config->get("list-plugins") === true){
+        if($config->get("show-plugins") === true){
+            $event->setListPlugins(true);
+        }
+        if($config->get("fake-plugins") === true){
             $this->plugins = $config->get("set-plugins");
             foreach($this->plugins as $plugins){
             $event->setPlugins([$plugins]);
     }
+}
 		$config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
     if($config->get("infinity-slots") === true){
         $event->setMaxPlayerCount($event->getPlayerCount() + 1);
@@ -71,4 +75,3 @@ $event->setPlayerCount(mt_rand($minPlayerCount, $maxPlayerCount));
         }
      }
    }
-}

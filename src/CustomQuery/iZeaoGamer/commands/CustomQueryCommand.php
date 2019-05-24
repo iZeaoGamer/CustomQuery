@@ -39,7 +39,7 @@ if($args[0] === "help"){
         $sender->sendMessage(TextFormat::colorize("&aConfig reloaded successfully."));
         return true;
     }//To-Do make messages editable.
-    if($args[0] === "list-plugins"){
+    if($args[0] === "fake-plugins"){
         if(!isset($args[1])){
             $sender->sendMessage(TextFormat::colorize("&cOption must return a value (true/false)"));
             return true;
@@ -47,17 +47,38 @@ if($args[0] === "help"){
     }
         if($args[1] === "true"){
             $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
-            $config->set("list-plugins", true);
+            $config->set("fake-plugins", true);
         } else {
             if($args[1] === "false"){
                 $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
-                $config->set("list-plugins", false);
+                $config->set("fake-plugins", false);
                 return true;
         } else {
 if($args[1] != true and $args[1] != false){
 $sender->sendMessage(TextFormat::colorize("&cInvalid value."));
 return true;
         }
+    }
+}
+if($args[0] === "show-plugins"){
+    if(!isset($args[1])){
+        $sender->sendMessgae(TextFormat::colorize("&cOption must return a value (true/false)"));
+        return true;
+    }
+}
+    if($args[1] === "true"){
+        $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+        $config->set("show-plugins", true);
+    } else {
+        if($args[1] === "false"){
+            $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
+            $config->set("show-plugins", false);
+            return true;
+    } else {
+if($args[1] != true and $args[1] != false){
+$sender->sendMessage(TextFormat::colorize("&cInvalid value."));
+return true;
+    }
 }
 }
         if($args[0] === "infinity-slots"){

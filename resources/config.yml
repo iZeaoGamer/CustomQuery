@@ -13,8 +13,16 @@ enable-commands: true
 permission: "customquery.settings"
 ### A permission node option, where you can customize your permissions to whatever you want.
 
+show-plugins: false
+### This option allows you to toggle on/off showing plugins (By defaulted, and in which are real).
+## If this option is set to false, it will show up fake plugins (If fake-plugins option is set to true.)
+## If this option is set to true, then it'll show real plugins, and may possibly overwrite fake-plugins, or overwrite one and another.
+## It's best to keep one of the options "show-plugins" or "fake-plugins" to either true or false.
+## Make sure they're not the same option just in case it does overwrite.
 ### Plugin / config options:
-list-plugins: true
+
+
+fake-plugins: true
 ## List your plugins on the servers list websites.
 
 set-plugins: []
