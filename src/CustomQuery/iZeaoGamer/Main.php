@@ -21,7 +21,7 @@ class Main extends PluginBase implements Listener{
     */
    public function onLoad(): void{
       $this->registerUpdates();
-      $this->checkPhar();
+      Utils::checkPhar();
     }
     /*
      * This function registers the updates, such as ConfigUpdater, and Updater.
@@ -29,16 +29,6 @@ class Main extends PluginBase implements Listener{
     public function registerUpdates(): void{
             Utils::PluginUpdater();
 	        Utils::ConfigUpdater();
-    }
-    public function checkPhar(): void{
-        if(!$this->isPhar()){
-            $this->getLogger()->error("!== PHAR REQUIRED !==");
-            $this->getLogger()->error("You need to run this plugin using a .phar file.");
-            $this->getLogger()->error("You're currently running this plugin from source.");
-            $this->getLogger()->error("You can get a packaged release at: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery");
-            $this->getLogger()->error("Plugin disabling to prevent this plugin from using source code.");
-       $this->getServer()->getPluginManager()->disablePlugin($this);
-        }
     }
     /*
      * This function is when plugins are enabling.
