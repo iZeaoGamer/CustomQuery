@@ -21,13 +21,24 @@ class Main extends PluginBase implements Listener{
     */
    public function onLoad(): void{
       $this->registerUpdates();
+      $this->checkPhar();
     }
     /*
      * This function registers the updates, such as ConfigUpdater, and Updater.
      */
     public function registerUpdates(): void{
-            Utils::UpdateNotifier(); //to-do - rename to PluginUpdater
-	    Utils::ConfigUpdater();
+            Utils::PluginUpdater();
+	        Utils::ConfigUpdater();
+    }
+    public function checkPhar(): void{
+        if(!$this->isPhar()){
+            $this->getLogger()->error("!== PHAR REQUIRED !==");
+            $this->getLogger()->error("You need to run this plugin using a .phar file.");
+            $this->getLogger()->error("You're currently running this plugin from source.");
+            $this->getLogger()->error("You can get a packaged release at: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery");
+            $this->getLogger()->error("Plugin disabling to prevent this plugin from using source code.");
+       $this->getServer()->getPluginManager()->disablePlugin($this);
+        }
     }
     /*
      * This function is when plugins are enabling.
@@ -39,7 +50,9 @@ class Main extends PluginBase implements Listener{
    
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        if (!is_dir($this->getDataFolder())) { @mkdir($this->getDataFolder()); }
+        if (!is_dir($this->getDataFolder())) {
+            @mkdir($this->getDataFolder());
+        }
         }
 	    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         if($config->get("enable-commands") === true){

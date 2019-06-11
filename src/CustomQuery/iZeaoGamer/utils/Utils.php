@@ -36,7 +36,7 @@ class Utils { //Register class.
 	/**
 	 * Checks if a new version of this plugin is released.
 	 */
-    public static function UpdateNotifier(): void{
+    public static function PluginUpdater(): void{
         UpdateNotifier::checkUpdate($this->plugin, $this->plugin->getDescription()->getName(), $this->plugin->getDescription()->getVersion());
     }
 	
