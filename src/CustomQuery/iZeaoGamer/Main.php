@@ -47,7 +47,6 @@ class Main extends PluginBase implements Listener{
         if (!is_dir($this->getDataFolder())) {
             @mkdir($this->getDataFolder());
         }
-        }
 	    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         if($config->get("enable-commands") === true){
         $this->getServer()->getCommandMap()->register("customquery", new CustomQueryCommand($this));
