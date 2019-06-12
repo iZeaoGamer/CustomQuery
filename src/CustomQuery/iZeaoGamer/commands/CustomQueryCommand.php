@@ -178,43 +178,68 @@ return true;
                                 if(!is_array($config->get("set-fake-plugins"))){
                                     $sender->sendMessage(TextFormat::colorize("&cPlease use arrays []."));
                                 } else {
-                                    $config->set("set-fake-plugins", $args[1]);
-                                        $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' to &5" . $args[1] . "&d."));
+                                    $fakeplugins = implode(" ", $args);
+                                    $config->set("set-fake-plugins", $fakeplugins);
+                                        $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' to &5" . $fakeplugins . "&d."));
                                         return true;
                                     }
                         if($args[0] === "motd-serverlist-message"){
-                            $config->set("motd-serverlist-message", $args[1]);
-                            $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] to&5 " . $args[1] . "&d."));
+                            if(!isset($args[1])){
+                                $sender->sendMessage(TextFormat::colorize("&cOption cannot be left empty."));
+                                return true;
+                            }
+                        $mslm = implode(" ", $args);
+                            $config->set("motd-serverlist-message", $mslm);
+                            $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] to&5 " . $mslm . "&d."));
                             return true;
                         }
                         if($args[0] === "new-player-motd"){
-                            $config->set("new-player-motd", $args[1]);
-                            $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' message to " . $args[1]));
+                            if(!isset($args[1])){
+                                $sender->sendMessage(TextFormat::colorize("&cOption cannot be left empty."));
+                                return true;
+                            }
+                        $npm = implode(" ", $args);
+                            $config->set("new-player-motd", $npm);
+                            $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' message to " . $npm));
                             return true;
                         }
                         if($args[0] === "old-player-motd"){
-                            $config->set("old-player-motd", $args[1]);
-                            $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' message to " . $args[1]));
-                            return true;
-                        }
-                        if($args[0] === "min-slots"){
-                            if(!is_int($args[1])){
-                                $sender->sendMessage(TextFormat::colorize("&cInvalid option - Option must be a numeric number, $args[1] given."));
-                            } else {
-                                $config->set("min-slots", $args[1]);
-                                $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' option to &5" . $args[1]));
-                                return true;
+                            if(!isset($args[1])){
+                                $sender->sendMessage(TextFormat::colorize("&cOption cannot be left empty."));
                             }
                         }
+                        $opm = implode(" ", $args);
+                            $config->set("old-player-motd", $opm);
+                            $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' message to " . $opm));
+                            return true;
+                        if($args[0] === "min-slots"){
+                            if(!is_int($args[1])){
+                                $ms = implode(" ", $args);
+                                $sender->sendMessage(TextFormat::colorize("&cInvalid option - Option must be a numeric number,  $ms given."));
+                                return true;
+                            }
+                            if(!isset($args[1])){
+                                $sender->sendMessage(TextFormat::colorize("&cOption cannot be left empty."));
+                            return true;
+                            }
+                        $ms = implode(" ", $args);
+                                $config->set("min-slots", $ms);
+                                $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' option to &5" . $ms));
+                                return true;
+                            }
                             if($args[0] === "max-slots"){
                                 if(!is_int($args[1])){
-                                    $sender->sendMessage(TextFormat::colorize("&cInvalid option - Option must be a numeric number, $args[1] given."));
-                                } else {
-                                    $config->set("max-slots", $args[1]);
-                                    $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' option to &5" . $args[1]));
+                                    $ms = implode(" ", $args);
+                                    $sender->sendMessage(TextFormat::colorize("&cInvalid option - Option must be a numeric number, $ms given."));
+                                }
+                                if(!isset($args[1])){
+                                    $sender->sendMessage(TextFormat::colorize("&cOption cannot be left empty."));
+                                return true;
+                                }
+                            $ms = implode(" ", $args);
+                                    $config->set("max-slots", $ms);
+                                    $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' option to &5" . $ms));
                                     return true;
                                 }
                             }
-                            return true;
-                        }
-                    }
+}
