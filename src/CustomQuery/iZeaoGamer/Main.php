@@ -15,28 +15,32 @@ use CustomQuery\iZeaoGamer\utils\Utils;
 
 
 class Main extends PluginBase implements Listener{
-   
+
+
    /*
     * This function becomes before onEnable() - So during the Loading plugin phase.
     */
    public function onLoad(): void{
       $this->registerUpdates();
-      Utils::checkPhar();
+      $this->utils = new Utils($this);
+      $this->utils->checkPhar();
     }
     /*
      * This function registers the updates, such as ConfigUpdater, and Updater.
      */
     public function registerUpdates(): void{
-            Utils::PluginUpdater();
-	        Utils::ConfigUpdater();
+            $this->utils = new Utils($this);
+            $this->utils->PluginUpdater();
+	        $this->utils->ConfigUpdater();
     }
     /*
      * This function is when plugins are enabling.
      * @return void
      */
     public function onEnable(): void{
-        if(!is_file($this->getDataFolder() . "config.yml")){
+        if(!is_file($this->getDataFolder() . "config.yml")) {
             $this->saveDefaultConfig();
+        }
    
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
