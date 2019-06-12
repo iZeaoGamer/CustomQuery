@@ -9,5 +9,5 @@ projects:
       - src: JackMD/ConfigUpdater/ConfigUpdater
         version: ^1.0.0
       - src: spoondetector/SpoonDetector
-        version: ^0.0.1   
+        version: ^0.0.1
 ...
