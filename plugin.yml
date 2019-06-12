@@ -7,3 +7,4 @@ description: "A customizable query plugin, where you can configure anything that
 virions:
 - UpdateNotifier
 - ConfigUpdater
+- SpoonDetector

@@ -12,6 +12,7 @@ use pocketmine\plugin\PluginBase;
 use CustomQuery\iZeaoGamer\tasks\ServerNameTask;
 use CustomQuery\iZeaoGamer\commands\CustomQueryCommand;
 use CustomQuery\iZeaoGamer\utils\Utils;
+use spoondetector\SpoonDetector;
 
 
 class Main extends PluginBase implements Listener{
@@ -38,6 +39,8 @@ class Main extends PluginBase implements Listener{
      * @return void
      */
     public function onEnable(): void{
+        SpoonDetector::printSpoon($this, "spoon.txt");
+        
         if(!is_file($this->getDataFolder() . "config.yml")) {
             $this->saveDefaultConfig();
         }
