@@ -22,17 +22,8 @@ class Main extends PluginBase implements Listener{
     * This function becomes before onEnable() - So during the Loading plugin phase.
     */
    public function onLoad(): void{
-      $this->registerUpdates();
       $this->utils = new Utils($this);
       $this->utils->checkPhar();
-    }
-    /*
-     * This function registers the updates, such as ConfigUpdater, and Updater.
-     */
-    public function registerUpdates(): void{
-            $this->utils = new Utils($this);
-            $this->utils->PluginUpdater();
-	        $this->utils->ConfigUpdater();
     }
     /*
      * This function is when plugins are enabling.
@@ -44,6 +35,9 @@ class Main extends PluginBase implements Listener{
         if(!is_file($this->getDataFolder() . "config.yml")) {
             $this->saveDefaultConfig();
         }
+	     $this->utils = new Utils($this);
+            $this->utils->PluginUpdater();
+	        $this->utils->ConfigUpdater();
    
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
