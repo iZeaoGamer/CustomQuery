@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener{
         }
 	    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
         if($config->get("enable-commands") === true){
-        $this->getServer()->getCommandMap()->register("customquery", new CustomQueryCommand($this));
+        $this->getServer()->getCommandMap()->register("query", new CustomQueryCommand($this));
     if($config->get("default-server-name" === false)){
         if(count($player = $this->getServer()->getOnlinePlayers()) < 1){
             $this->getScheduler()->scheduleRepeatingTask(new ServerNameTask($this, $player), 20);
