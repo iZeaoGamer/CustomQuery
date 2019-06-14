@@ -77,7 +77,7 @@ class Main extends PluginBase implements Listener{
             $event->setListPlugins(true);
         }
         if($config->get("fake-plugins") === true){
-            $this->plugins = $config->get("set-plugins");
+            $this->plugins = $config->get("set-fake-plugins");
             foreach($this->plugins as $plugins){
             $event->setPlugins([$plugins]);
     }
