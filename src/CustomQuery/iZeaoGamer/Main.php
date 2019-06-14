@@ -18,20 +18,22 @@ use spoondetector\SpoonDetector;
 class Main extends PluginBase implements Listener{
 
 
-   /*
-    * This function becomes before onEnable() - So during the Loading plugin phase.
-    */
-   public function onLoad(): void{
-      $this->utils = new Utils($this);
-      $this->utils->checkPhar();
-    }
     /*
      * This function is when plugins are enabling.
      * @return void
      */
     public function onEnable(): void{
         SpoonDetector::printSpoon($this, "spoon.txt");
-        
+        public function checkPhar(): void{		
+        if(!$this->isPhar()){
+            $thisn->getLogger()->error("!== PHAR REQUIRED !==");
+            $this->getLogger()->error("You need to run this plugin using a .phar file.");
+            $this->getLogger()->error("You're currently running this plugin from source.");
+            $this->getLogger()->error("You can get a packaged release at: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery");
+            $this->getLogger()->error("Plugin disabling to prevent this plugin from using source code.");
+       $this->getServer()->getPluginManager()->disablePlugin($this);
+        }
+	}
         if(!is_file($this->getDataFolder() . "config.yml")) {
             $this->saveDefaultConfig();
         }
