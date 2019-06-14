@@ -76,12 +76,12 @@ if($args[0] === "show-plugins"){
     if($args[1] === "true"){
         $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
         $config->set("show-plugins", true);
-        $config->save();
+
     } else {
         if($args[1] === "false"){
             $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
             $config->set("show-plugins", false);
-            $config->save();
+  
             return true;
     } else {
 if($args[1] != true and $args[1] != false){
@@ -99,12 +99,12 @@ return true;
             if($args[1] === "true"){
                 $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                 $config->set("infinity-slots", $args[1]);
-                $config->save();
+              
             } else {
                 if($args[1] === "false"){
                 $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                 $config->set("infinity-slots", $args[1]);
-                    $config->save();
+                 
             } else {
 if($args[1] != true and $args[1] != false){
 $sender->sendMessage(TextFormat::colorize("&cInvalid value."));
@@ -121,12 +121,12 @@ return true;
                 if($args[1] === "true"){
                     $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                     $config->set("enable-serverlist-motd", $args[1]);
-                    $config->save();
+             
                 } else {
                     if($args[1] === "false"){
                     $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                     $config->set("enable-serverlist-motd", $args[1]);
-                        $config->save();
+                
                        } else {
 if($args[1] != true and $args[1] != false){
 $sender->sendMessage(TextFormat::colorize("&cInvalid value."));
@@ -143,12 +143,12 @@ return true;
                     if($args[1] === "true"){
                         $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                         $config->set("fake-slots", $args[1]);
-                        $config->save();
+              
                     } else {
                         if($args[1] === "false"){
                         $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] option to $args[1]."));
                         $config->set("fake-slots", $args[1]);
-                            $config->save();
+                     
                            } else {
 if($args[1] != true and $args[1] != false){
 $sender->sendMessage(TextFormat::colorize("&cInvalid value."));
@@ -190,7 +190,7 @@ return true;
                                 } else {
                                     $fakeplugins = implode(" ", $args);
                                     $config->set("set-fake-plugins", $fakeplugins);
-                                    $config->save();
+                            
                                         $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' to &5" . $fakeplugins . "&d."));
                                         return true;
                                     }
@@ -201,7 +201,7 @@ return true;
                             }
                         $mslm = implode(" ", $args);
                             $config->set("motd-serverlist-message", $mslm);
-                            $config->save();
+                   
                             $sender->sendMessage(TextFormat::colorize("&dYou've set $args[0] to&5 " . $mslm . "&d."));
                             return true;
                         }
@@ -212,7 +212,7 @@ return true;
                             }
                         $npm = implode(" ", $args);
                             $config->set("new-player-motd", $npm);
-                            $config->save();
+                     
                             $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' message to " . $npm));
                             return true;
                         }
@@ -223,7 +223,7 @@ return true;
                         }
                         $opm = implode(" ", $args);
                             $config->set("old-player-motd", $opm);
-                            $config->save();
+                
                             $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' message to " . $opm));
                             return true;
                         if($args[0] === "min-slots"){
@@ -238,7 +238,7 @@ return true;
                             }
                         $ms = implode(" ", $args);
                                 $config->set("min-slots", $ms);
-                                $config->save();
+                        
                                 $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' option to &5" . $ms));
                                 return true;
                             }
@@ -253,7 +253,7 @@ return true;
                                 }
                             $ms = implode(" ", $args);
                                     $config->set("max-slots", $ms);
-                                    $config->save();
+                         
                                     $sender->sendMessage(TextFormat::colorize("&dYou've set '$args[0]' option to &5" . $ms));
                                     return true;
                                 }
