@@ -12,7 +12,7 @@ use pocketmine\Player;
 
 class CustomQueryCommand extends Command {
     public function __construct(Main $plugin) { //The construct to lead to the main class.
-        parent::__construct("query", "Set up your query settings.", "/query settings", ["cq"]); //Command, description, usage, and aliases, each extendations can be different to others. This is from extending commands file for Pocketmine. 
+        parent::__construct("query", "Set up your query settings.", "/query <setting>", ["cq"]); //Command, description, usage, and aliases, each extendations can be different to others. This is from extending commands file for Pocketmine. 
         $this->plugin = $plugin; //Registering the variable so it can be used in functions. (Within this class file)
     }
 public function execute(CommandSender $sender, string $label, array $args): bool{
