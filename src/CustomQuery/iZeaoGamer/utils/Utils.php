@@ -18,17 +18,6 @@ class Utils { //Register class.
     }
      /** @var int */
      private const CONFIG_VERSION = 0.2; //Register config version file - Will get updated everytime a new config version is available.
-
-	 public function checkPhar(): void{		
-        if(!$this->plugin->isPhar()){
-            $this->plugin->getLogger()->error("!== PHAR REQUIRED !==");
-            $this->plugin->getLogger()->error("You need to run this plugin using a .phar file.");
-            $this->plugin->getLogger()->error("You're currently running this plugin from source.");
-            $this->plugin->getLogger()->error("You can get a packaged release at: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery");
-            $this->plugin->getLogger()->error("Plugin disabling to prevent this plugin from using source code.");
-       $this->plugin->getServer()->getPluginManager()->disablePlugin($this->plugin);
-        }
-    }
 	/**
 	 * Checks if a new version of this plugin is released.
 	 */
