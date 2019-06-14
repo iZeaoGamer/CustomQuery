@@ -72,7 +72,8 @@ To know more about setting up as more examples, please head over to OPTIONS EXPL
 
 
 ### OPTIONS EXPLAINATION
-The usages to the settings system, is: /customquery <settings> <value>
+The usages to the settings system, is: /query <settings> <value>
+  The alias to the Query command is /cq.
   <settings> is the setting specified and provided to you from config.yml, and value is the value of the option. It could be: true or false if it's enabling a option or feature.
     If you're setting a message such as server list motd message, then that'd be a string, leading to a message for that option.
     If you're setting a numeric option such as: min-slots - 10 or max-slots 1000, then that'd be a int, which is a number-type option.
