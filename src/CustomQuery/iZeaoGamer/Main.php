@@ -1,30 +1,25 @@
 <?php
+
 namespace CustomQuery\iZeaoGamer;
 
 use pocketmine\event\server\QueryRegenerateEvent;
 use pocketmine\event\Listener;
-
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
-
 use pocketmine\plugin\PluginBase;
-
 use CustomQuery\iZeaoGamer\tasks\ServerNameTask;
 use CustomQuery\iZeaoGamer\commands\CustomQueryCommand;
 use CustomQuery\iZeaoGamer\utils\Utils;
 use spoondetector\SpoonDetector;
 
-
 class Main extends PluginBase implements Listener{
-
-
     /*
      * This function is when plugins are enabling.
      * @return void
      */
     public function onEnable(): void{
         SpoonDetector::printSpoon($this, "spoon.txt");
-        public function checkPhar(): void{		
+        
         if(!$this->isPhar()){
             $thisn->getLogger()->error("!== PHAR REQUIRED !==");
             $this->getLogger()->error("You need to run this plugin using a .phar file.");
@@ -33,7 +28,6 @@ class Main extends PluginBase implements Listener{
             $this->getLogger()->error("Plugin disabling to prevent this plugin from using source code.");
        $this->getServer()->getPluginManager()->disablePlugin($this);
         }
-	}
         if(!is_file($this->getDataFolder() . "config.yml")) {
             $this->saveDefaultConfig();
         }
@@ -53,8 +47,8 @@ class Main extends PluginBase implements Listener{
         if(count($player = $this->getServer()->getOnlinePlayers()) < 1){
             $this->getScheduler()->scheduleRepeatingTask(new ServerNameTask($this, $player), 20);
        }
-      }
-     }
+    }
+        }
     }
     /*
     * An event function, allowing you to edit parts of the Query system for your servers.
