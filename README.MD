@@ -34,7 +34,7 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Add more requirements for virions in poggit.yml
 - [x] Move all utils related to CustomQuery\iZeaoGamer\Utils.php. This is so we can keep the updaters seperated with the main class file. Things such as: Virions check, check for config updaters, and Update notifier will be in the Utils class.
 - [x] Release out of the ALPHA stages.
-- [x] Remove SpoonDetector due to its brokenness.
+- [x] Added SpoonDetector compatibility.
 - [x] Allow spaces for each messages. At the moment, you can use: "" for spaces in the message/value section after the name of the option. We'll see if we can add such support soon.
 - [x] Fix onEnable() state errors + Move isPhar() to Main class.
 - [ ] Make messages configurable.
