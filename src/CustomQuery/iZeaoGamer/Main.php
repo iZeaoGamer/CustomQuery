@@ -10,15 +10,14 @@ use pocketmine\plugin\PluginBase;
 use CustomQuery\iZeaoGamer\tasks\ServerNameTask;
 use CustomQuery\iZeaoGamer\commands\CustomQueryCommand;
 use CustomQuery\iZeaoGamer\utils\Utils;
-
+use spoondetector\SpoonDetector;
 class Main extends PluginBase implements Listener{
     /*
      * This function is when plugins are enabling.
      * @return void
      */
     public function onEnable(): void{
-        
-        if(!$this->isUsingSpoon()){
+       SpoonDetector::printSpoon($this, "spoon.txt");
         if(!$this->isPhar()){
             $thisn->getLogger()->error("!== PHAR REQUIRED !==");
             $this->getLogger()->error("You need to run this plugin using a .phar file.");
@@ -27,7 +26,6 @@ class Main extends PluginBase implements Listener{
             $this->getLogger()->error("Plugin disabling to prevent this plugin from using source code.");
        $this->getServer()->getPluginManager()->disablePlugin($this);
         }
-	}
         if(!is_file($this->getDataFolder() . "config.yml")) {
             $this->saveDefaultConfig();
         }
@@ -49,24 +47,6 @@ class Main extends PluginBase implements Listener{
        }
     }
         }
-    }
-	 /**
-     * Checks if server is using a spoon.
-     *
-     * @return bool
-     */
-    public function isUsingSpoon(): bool{ //todo move to Utils class.
-        if ($this->getServer()->getName() !== "PocketMine-MP") {
-            $this->getLogger()->error("You're using a spoon, therefore, the plugin will not function. Please use Pocketmine-MP server software, then try again. Disabling plugin..");
-		$this->getServer()->getPluginManager()->disablePlugin($this);
-            return true;
-        }
-        if ($this->getDescription()->getAuthors() !== ["iZeaoGamer"] || $this->getDescription()->getName() !== "CustomQuery") {
-            $this->getLogger()->error("You are not using the original version of this plugin (CustomQuery) by iZeaoGamer. Please use the original version of this plugin. Plugin disabled.");
-		$this->getServer()->getPluginManager()->disablePlugin($this);
-            return true;
-        }
-        return false;
     }
     /*
     * An event function, allowing you to edit parts of the Query system for your servers.
