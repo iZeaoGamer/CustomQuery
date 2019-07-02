@@ -37,6 +37,7 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Added SpoonDetector compatibility.
 - [x] Allow spaces for each messages. At the moment, you can use: "" for spaces in the message/value section after the name of the option. We'll see if we can add such support soon.
 - [x] Fix onEnable() state errors + Move isPhar() to Main class.
+- [x] Add online support with Server MOTD.
 - [ ] Make messages configurable.
 - [ ] Add formsapi support - not confirmed.
 - [ ] Add an option whether to add support for formsapi or use command arguments instead.
