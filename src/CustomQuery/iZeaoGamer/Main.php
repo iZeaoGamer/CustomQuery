@@ -19,7 +19,7 @@ class Main extends PluginBase implements Listener{
     public function onEnable(): void{
        SpoonDetector::printSpoon($this, "spoon.txt");
         if(!$this->isPhar()){
-            $thisn->getLogger()->error("!== PHAR REQUIRED !==");
+            $this->getLogger()->error("!== PHAR REQUIRED !==");
             $this->getLogger()->error("You need to run this plugin using a .phar file.");
             $this->getLogger()->error("You're currently running this plugin from source.");
             $this->getLogger()->error("You can get a packaged release at: https://poggit.pmmp.io/ci/iZeaoGamer/CustomQuery/CustomQuery");
