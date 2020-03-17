@@ -9,8 +9,6 @@ use pocketmine\utils\Config;
 
 use CustomQuery\iZeaoGamer\Main;
 
-use RuntimeException;
-
 class Utils { //Register class.
 
     public function __construct(Main $plugin) { //A construction function, registering the main class to this class.
