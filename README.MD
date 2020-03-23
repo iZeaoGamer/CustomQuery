@@ -18,7 +18,7 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Added color coding support for server names.
 - [x] Set variables for server names.
 - [x] Customizable server list MOTD (When posting your server) (Untested)
-- [x] Add a task file. (Untested)
+- [x] Add a task class. (Untested)
 - [x] Add commands to edit the query settings.
 - [x] Add /customquery reload to reload the configurations without the need of a server restart.
 - [x] Add /customquery help for a list of main commands you can use.
@@ -32,7 +32,7 @@ Fake player slots, set a list of plugins that can be displayable for your player
 - [x] Fix dependency issue.
 - [x] Add virions section in plugin.yml, allowing the server to know what virions are in this plugin.
 - [x] Add more requirements for virions in poggit.yml
-- [x] Move all utils related to CustomQuery\iZeaoGamer\Utils.php. This is so we can keep the updaters seperated with the main class file. Things such as: Virions check, check for config updaters, and Update notifier will be in the Utils class.
+- [x] Move all utils related to Utils class. This is so we can keep the updaters seperated with the main class file. Things such as: Virions check, check for config updaters, and Update notifier will be in the Utils class.
 - [x] Release out of the ALPHA stages.
 - [x] Added SpoonDetector compatibility.
 - [x] Allow spaces for each messages. At the moment, you can use: "" for spaces in the message/value section after the name of the option. We'll see if we can add such support soon.
